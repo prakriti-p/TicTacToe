@@ -5,7 +5,6 @@ html, body, .viewport {
   font-family: 'Pacifico';
   position: absolute;
 }
-
 body .github-fork-ribbon:before {
   background-color: #333;
 }

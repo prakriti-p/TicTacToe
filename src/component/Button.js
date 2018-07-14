@@ -6,7 +6,6 @@ class Button extends React.Component {
   handleClick = () => {
     this.props.clickHandler(this.props.name);
   };
-
   isSlotPlayed = (value) => {
     if(value === "") {
       return 'empty-slot';
@@ -16,7 +15,6 @@ class Button extends React.Component {
       return "pc-slot";
     }
   };
-
   render() {
     return (
       <div className="component-button">

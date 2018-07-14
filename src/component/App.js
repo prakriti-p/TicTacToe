@@ -27,18 +27,14 @@ class App extends React.Component {
       }
     }
   }
-
   handleClick = (buttonName) => {
     this.setState(nextMove(this.state.gameState, buttonName));
   };
-
   handleReset = () => {
     this.setState(resetGame());
   }
-
   render() {
     return (
-
       <div className="flex-container">
           <div id="display-box" class="flex-item"> <Display value={this.state.gameStatus.winner} /></div>
           <div id="game-board" class="flex-item">
@@ -48,7 +44,6 @@ class App extends React.Component {
             <button className="reset-button" onClick={this.handleReset}>R E S E T</button>
           </div>
       </div> 
-
     );
   }
 }
