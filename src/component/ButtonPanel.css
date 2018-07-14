@@ -4,8 +4,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   flex: 1 0 auto;
-  height: 30vw;
-  width: 30%;
+  height: 30rem;
+  width: 32rem;
 }
 .component-button-panel > div {
   width: 100%;
