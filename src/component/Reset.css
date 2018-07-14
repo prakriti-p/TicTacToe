@@ -1,0 +1,41 @@
+
+  .reset-button {
+    background:#e4493b;
+    color:black;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    border-radius: 12px;
+    font-family: 'Chela One', cursive;
+  }
+  .reset-button:hover{
+    background:#fff;
+    color:#e4493b;
+  }
+  .reset-button:before,.reset-button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #e4493b;
+    transition:400ms ease all;
+  }
+  .reset-button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .reset-button:hover:before,.reset-button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+  
+  

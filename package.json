@@ -1,0 +1,38 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "A sample game in react.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prakriti-p/TicTacToe.git"
+  },
+  "author": "Prakriti Patra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prakriti-p/TicTacToe/issues"
+  },
+  "homepage": "https://github.com/prakriti-p/TicTacToe#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "gh-pages": "^1.1.0",
+    "prettier": "1.13.0",
+    "react-scripts": "^1.1.4"
+  },
+  "dependencies": {
+    "big.js": "^5.1.2",
+    "github-fork-ribbon-css": "^0.2.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
+  },
+  "prettier": {
+    "trailingComma": "all"
+  }
+}
