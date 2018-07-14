@@ -3,11 +3,9 @@
   width: 25%;
   flex: 1 0 auto;
 }
-
 .component-button.wide {
   width: 50%;
 }
-
 .component-button button {
   background-color: teal;
   border-color: teal;
@@ -18,36 +16,21 @@
   padding: 0;
   font-family: 'Chela One', cursive;
 }
-
 .component-button:last-child button {
   margin-right: 0;
 }
-
 .component-button button:hover{
   background:#E8CA25;
   color:black;
   border: #E8CA25;
 }
-
 .pc-slot {
   background:#3a3a3c !important;
   color:white;
   border: #3a3a3c !important;
 }
-
 .user-slot {
   background:#E8CA25 !important;
   color:black;
   border: #E8CA25 !important;
 }
-
-
-
-
-
-
-
-
-
-
-
