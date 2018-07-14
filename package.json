@@ -34,5 +34,8 @@
   },
   "prettier": {
     "trailingComma": "all"
+  },
+  "engines": {
+    "node": "8.4.0"
   }
 }
