@@ -1,4 +1,5 @@
 import isGameOver from "./isGameOver";
+import checkWinningSpot from "./checkWinningSpot";
 
 export default function nextMove(_stateObject, _currentMove) {
     var gameStateDenotingNextMove = _stateObject;
@@ -14,9 +15,19 @@ export default function nextMove(_stateObject, _currentMove) {
             }
         });
         if(leftOverSpots.length > 0) {
-            var random = leftOverSpots[Math.floor(Math.random() * leftOverSpots.length)];
-            gameStateDenotingNextMove[random].value = "O";
-            gameStateDenotingNextMove[random].owner = "PC";
+            var pcWinningSpot = checkWinningSpot(gameStateDenotingNextMove, "O");
+            var userWinningSpot = checkWinningSpot(gameStateDenotingNextMove, "X");
+            var spotForNextPCMove;
+            if(pcWinningSpot !== 0) {
+                spotForNextPCMove = pcWinningSpot;
+            } else if(userWinningSpot !== 0) {
+                spotForNextPCMove = userWinningSpot
+            } else {
+                spotForNextPCMove = leftOverSpots[Math.floor(Math.random() * leftOverSpots.length)];
+            }
+            
+            gameStateDenotingNextMove[spotForNextPCMove].value = "O";
+            gameStateDenotingNextMove[spotForNextPCMove].owner = "PC";
             let gameStatusAfterPCPlayed = isGameOver(gameStateDenotingNextMove);
             if(gameStatusAfterPCPlayed.gameOver === false) {
                 gameStateDenotingNextMove["gameStatus"] = gameStatusAfterPCPlayed;
