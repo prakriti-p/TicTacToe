@@ -1,55 +1,36 @@
 export default function isGameOver(_stateObject) {   
+    var returningValue = {};
+    returningValue["gameOver"] = false;
+
     // Checking for Rows for X or O victory.
-    if(_stateObject[1].value === _stateObject[2].value && _stateObject[2].value === _stateObject[3].value && _stateObject[3].value !== "") { 
-        return {
-            gameOver: true,
-            winner: _stateObject[1].owner + " wins!!!"
-        } 
-    } else if(_stateObject[4].value === _stateObject[5].value && _stateObject[5].value === _stateObject[6].value && _stateObject[6].value !== "") {
-        return {
-            gameOver: true,
-            winner: _stateObject[4].owner + " wins!!!"
-        } 
-    } else if(_stateObject[7].value === _stateObject[8].value && _stateObject[8].value === _stateObject[9].value && _stateObject[9].value !== "") {
-        return {
-            gameOver: true,
-            winner: _stateObject[7].owner + " wins!!!"
-        } 
-    }
+    if(returningValue.gameOver === false) returningValue = checkTriplets(_stateObject, 1, 2, 3);
+    if(returningValue.gameOver === false) returningValue = checkTriplets(_stateObject, 4, 5, 6);
+    if(returningValue.gameOver === false) returningValue = checkTriplets(_stateObject, 7, 8, 9);
 
     // Checking for Columns for X or O victory.
-    if(_stateObject[1].value === _stateObject[4].value && _stateObject[4].value === _stateObject[7].value && _stateObject[7].value !== "") {
-        return {
-            gameOver: true,
-            winner: _stateObject[1].owner + " wins!!!"
-        } 
-    } else if(_stateObject[2].value === _stateObject[5].value && _stateObject[5].value === _stateObject[8].value && _stateObject[8].value !== "") {
-        return {
-            gameOver: true,
-            winner: _stateObject[2].owner + " wins!!!"
-        } 
-    } else if(_stateObject[3].value === _stateObject[6].value && _stateObject[6].value === _stateObject[9].value && _stateObject[9].value !== "") {
-        return {
-            gameOver: true,
-            winner: _stateObject[3].owner + " wins!!!"
-        } 
-    }
+    if(returningValue.gameOver === false) returningValue = checkTriplets(_stateObject, 1, 4, 7);
+    if(returningValue.gameOver === false) returningValue = checkTriplets(_stateObject, 2, 5, 8);
+    if(returningValue.gameOver === false) returningValue = checkTriplets(_stateObject, 3, 6, 9);
 
     // Checking for Diagonals for X or O victory.
-    if(_stateObject[1].value === _stateObject[5].value && _stateObject[5].value === _stateObject[9].value && _stateObject[9].value !== "") {
-        return {
-            gameOver: true,
-            winner: _stateObject[1].owner + " wins!!!"
-        } 
-    } else if(_stateObject[3].value === _stateObject[5].value && _stateObject[5].value === _stateObject[7].value && _stateObject[7].value !== "") {
-        return {
-            gameOver: true,
-            winner: _stateObject[3].owner + " wins!!!"
-        } 
-    }
+    if(returningValue.gameOver === false) returningValue = checkTriplets(_stateObject, 1, 5, 9);
+    if(returningValue.gameOver === false) returningValue = checkTriplets(_stateObject, 3, 5, 7);
 
-    return {
-        gameOver: false,
-        winner: "Let's Play!!"
+    return returningValue;
+}
+
+function checkTriplets(_stateObject, s1, s2, s3) {
+    if(_stateObject[s1].value === _stateObject[s2].value && _stateObject[s2].value === _stateObject[s3].value && _stateObject[s1].value !== "") { 
+        return {
+            gameOver: true,
+            winner: _stateObject[s1].owner + " wins!!!"
+        } 
+    } else {
+        return {
+            gameOver: false,
+            winner: "Let's Play!!"
+        };
     }
 }
+
+
