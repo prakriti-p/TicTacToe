@@ -1,6 +1,7 @@
 import React from "react";
 import Display from "./Display";
 import ButtonPanel from "./ButtonPanel";
+import Reset from "./Reset";
 import nextMove from "../logic/nextMove"
 import resetGame from "../logic/resetGame"
 import "./App.css";
@@ -9,7 +10,7 @@ import "./Reset.css"
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { 
       gameState: {
         1: { value: "", owner: "" },
         2: { value: "", owner: "" },
@@ -36,13 +37,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="flex-container">
-          <div id="display-box" class="flex-item"> <Display value={this.state.gameStatus.winner} /></div>
-          <div id="game-board" class="flex-item">
+          <Display value={this.state.gameStatus.winner} />
           <ButtonPanel clickHandler={this.handleClick} gameState={this.state.gameState} isGameOver={!this.state.gameStatus.gameOver}/>
-          </div>
-          <div id="controls" class="flex-item">
-            <button className="reset-button" onClick={this.handleReset}>R E S E T</button>
-          </div>
+          <Reset resetFunction={this.handleReset}/>
       </div> 
     );
   }
