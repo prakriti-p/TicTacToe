@@ -1,4 +1,4 @@
-export default function isGameOver() {  
+export default function resetGame() {  
     var resetGameObject = {
         gameState: {
             1: { value: "", owner: "" },
